@@ -26,7 +26,7 @@ class KeyDwellTimes( FloatSeq ):
  
 class FeatureExtractor(KeypressEventReceiver):
     '''Extracts features from keypress data'''
-    def __init__(self, timing_threshold=500):
+    def __init__(self, timing_threshold=5000):
         self.pt=0           #last press  time
         self.pk=0           #last pressed key
         self.press_time={}  #dictionary that associates currently depressed keys and

@@ -92,7 +92,7 @@ class FingerprintComparer(object):
         return summed[1]/summed[0]
 
     def _fingerprint_similarity( self, f1, f2 ):
-        print("Compare data from {} and {}.".format(f1, f2))
+        #print("Compare data from {} and {}.".format(f1, f2))
         #f1,f2= DictTree.intersect( f1, f2 )
         def feature_map(*features):
             f1,f2= features
@@ -121,7 +121,7 @@ class FingerprintDatabase(object):
             raise Exception("No data exist for matching!")
         scores= self.score(data)
         for f,score in zip(self.fingerprints, scores):
-            print("Mark for {}: {}.".format(f.name, score))
+            print("Mark for {}: {}.".format(f.name, score*1e5))
         best_i= scores.index(max(scores))
         best= self.fingerprints[best_i]
         return best
