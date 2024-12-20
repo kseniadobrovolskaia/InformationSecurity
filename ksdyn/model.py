@@ -93,7 +93,7 @@ class FingerprintComparer(object):
 
     def _fingerprint_similarity( self, f1, f2 ):
         #print("Compare data from {} and {}.".format(f1, f2))
-        #f1,f2= DictTree.intersect( f1, f2 )
+        f1,f2= DictTree.intersect( f1, f2 )
         def feature_map(*features):
             f1,f2= features
             return f1.similarity(f2)

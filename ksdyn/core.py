@@ -165,7 +165,7 @@ class DictTree(dict, Named):
         each outputed tree is a exact copy of the input, but only
         contains children whose names (keys) appear on *all* trees'''
         recursive=True
-        common_names= functools.reduce(set.intersection, [set(f.keys()) for f in trees], 1)
+        common_names= functools.reduce(set.intersection, [set(f.keys()) for f in trees])
         def get_childs( child_name ):
             '''returns the child with child_name for every tree'''
             childs= [tree[child_name] for tree in trees]
